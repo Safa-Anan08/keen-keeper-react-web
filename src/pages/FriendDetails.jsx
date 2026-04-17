@@ -29,13 +29,9 @@ export default function FriendDetails() {
  
   const handleAction = (type) => {
     addEntry(type, friend.name);
-
     toast.success(`${type} with ${friend.name} recorded!`);
   };
 
-
-  const { addEntry } = useContext(TimelineContext);
-  addEntry(type, friend.name);
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8 px-4">
 

@@ -103,7 +103,7 @@ export default function FriendDetails() {
           </div>
 
           <div className="bg-white p-4 rounded-xl text-center">
-            <h2 className="text-sm font-semibold">{friend.next_due_date}</h2>
+            <h2 className="text-xl font-bold">{friend.next_due_date}</h2>
             <p className="text-sm text-gray-500">Next Due</p>
           </div>
         </div>

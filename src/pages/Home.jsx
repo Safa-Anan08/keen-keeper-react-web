@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-
+import FriendCard from "../components/FriendCard";
 import { TimelineContext } from "../context/TimelineContext";
 import { IoAdd } from "react-icons/io5";
 
@@ -17,11 +17,11 @@ export default function Home() {
   const total = friends.length;
 
   const onTrack = friends.filter(
-    f => f.status === "on-track"
+    f => f.status === "On-track"
   ).length;
 
   const needAttention = friends.filter(
-    f => f.status === "overdue" || f.status === "almost due"
+    f => f.status === "Overdue" || f.status === "Almost due"
   ).length;
 
   const currentMonth = new Date().getMonth();
@@ -87,7 +87,15 @@ relationships that matter most.
       </div>
 
 
-    
+      <div className="mt-12">
+        <h2 className="text-xl font-bold mb-6">Your Friends</h2>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {friends.map(friend => (
+            <FriendCard key={friend.id} friend={friend} />
+          ))}
+        </div>
+      </div>
 
     </div>
   );

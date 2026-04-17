@@ -1,33 +1,45 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
-import homeIcon from "../assets/call.png";
-import timelineIcon from "../assets/text.png";
-import statsIcon from "../assets/video.png";
+import { IoMdHome } from "react-icons/io";
+import { FaClock } from "react-icons/fa";
+import { FiActivity } from "react-icons/fi";
 
 export default function Navbar() {
+
   const linkClass = ({ isActive }) =>
-    isActive
-      ? "flex items-center gap-2 text-green-600 font-semibold"
-      : "flex items-center gap-2 text-gray-600";
+    `flex items-center gap-1 md:gap-2 rounded-lg transition 
+    px-2 py-1 text-xs 
+    md:px-4 md:py-2 md:text-sm
+    ${
+      isActive
+        ? "bg-green-900 text-white font-semibold"
+        : "text-gray-600 hover:text-green-600"
+    }`;
 
   return (
-    <div className="bg-white shadow p-4 flex justify-between items-center">
+    <div className="bg-white shadow px-4 md:px-6 py-3 flex justify-between items-center">
+
       <div className="flex items-center gap-2">
-        <img src={logo} className="h-6" />
+        <img src={logo} className="h-5 md:h-6" />
       </div>
 
-      <div className="flex gap-6">
+      <div className="flex gap-2 md:gap-6">
+
         <NavLink to="/" className={linkClass}>
-          <img src={homeIcon} className="w-4" /> Home
+          <IoMdHome className="text-base md:text-lg" />
+          <span>Home</span>
         </NavLink>
 
         <NavLink to="/timeline" className={linkClass}>
-          <img src={timelineIcon} className="w-4" /> Timeline
+          <FaClock className="text-base md:text-lg" />
+          <span>Timeline</span>
         </NavLink>
 
         <NavLink to="/stats" className={linkClass}>
-          <img src={statsIcon} className="w-4" /> Stats
+          <FiActivity className="text-base md:text-lg" />
+          <span>Stats</span>
         </NavLink>
+
       </div>
     </div>
   );

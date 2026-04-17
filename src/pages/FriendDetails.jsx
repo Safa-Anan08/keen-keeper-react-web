@@ -22,8 +22,8 @@ export default function FriendDetails() {
 
   const statusStyle = {
     "Overdue": "bg-red-600 text-white",
-    "Almost due": "bg-yellow-100 text-yellow-600",
-    "On-track": "bg-green-100 text-green-600",
+    "Almost due": "bg-yellow-600 text-white",
+    "On-track": "bg-green-600 text-white",
   };
 
  

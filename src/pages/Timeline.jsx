@@ -5,20 +5,32 @@ import { LuMessageSquareMore } from "react-icons/lu";
 
 export default function Timeline() {
   const { timeline } = useContext(TimelineContext);
-
   const [filter, setFilter] = useState("Filter Timeline");
   const [open, setOpen] = useState(false);
-
+  const [search, setSearch] = useState("");
+  const [sortOrder, setSortOrder] = useState("newest");
   const iconMap = {
     Call: FiPhoneCall,
     Text: LuMessageSquareMore,
     Video: FiVideo
   };
 
-  const filtered =
-    filter === "Filter Timeline"
-      ? timeline
-      : timeline.filter(item => item.type === filter);
+  const filtered = timeline
+    .filter(item =>
+      filter === "Filter Timeline" ? true : item.type === filter
+    )
+    .filter(item =>
+      item.title.toLowerCase().includes(search.toLowerCase()) ||
+      item.type.toLowerCase().includes(search.toLowerCase())
+    )
+    .sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      return sortOrder === "newest"
+        ? dateB - dateA
+        : dateA - dateB;
+    });
 
   useEffect(() => {
     const close = () => setOpen(false);
@@ -31,7 +43,7 @@ export default function Timeline() {
 
       <h1 className="text-2xl font-bold mb-6">Timeline</h1>
 
-      <div className="mb-8 relative w-44">
+      <div className="mb-4 relative w-44">
         <div
           onClick={(e) => {
             e.stopPropagation();
@@ -66,6 +78,25 @@ export default function Timeline() {
         )}
       </div>
 
+      <div className="flex flex-col md:flex-row gap-3 mb-8">
+        <input
+          type="text"
+          placeholder="Search by name or type..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="border px-3 py-2 rounded-lg w-full md:w-1/2"
+        />
+
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          className="border px-3 py-2 rounded-lg w-full md:w-40"
+        >
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+
       <div className="relative">
 
         <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-gray-200"></div>
@@ -91,7 +122,7 @@ export default function Timeline() {
                   {item.title}
                 </p>
                 <p className="text-sm text-gray-500 mt-1">
-                  {item.date}
+                   {new Date(item.date).toLocaleDateString()}
                 </p>
               </div>
 

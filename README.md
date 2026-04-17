@@ -27,7 +27,7 @@ KeenKeeper is a responsive relationship management web app that helps users trac
 ### 2. Interaction Timeline
 
 * Log interactions (Call, Text, Video)
-* Filter timeline using dropdown (All / Call / Text / Video)
+* Filter timeline using dropdown (Filter timeline / Call / Text / Video)
 * Visual timeline UI with icons and dates
 
 ### 3.  Friendship Analytics

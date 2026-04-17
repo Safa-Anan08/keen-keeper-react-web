@@ -108,5 +108,8 @@ Making the app interactive, real-time, and data-driven.
 
 Developed as part of a frontend assignment project.
 
+Live Link: https://keen-keeper-react.netlify.app/ 
+GitHub Repository Link: https://github.com/Safa-Anan08/keen-keeper-react-web 
+
 
 

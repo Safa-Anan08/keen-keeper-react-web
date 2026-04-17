@@ -41,8 +41,7 @@ export default function Home() {
         </h1>
 
         <p className="text-gray-500 mt-2">
-          Your personal shelf of meaningful connections. Browse, tend, and nurture the
-relationships that matter most.
+          Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>
 
         <button className="mt-4 bg-green-950 text-white px-5 py-2 rounded-lg flex items-center gap-2 mx-auto">

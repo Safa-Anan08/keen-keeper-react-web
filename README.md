@@ -1,16 +1,112 @@
-# React + Vite
+#  KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+KeenKeeper is a responsive relationship management web app that helps users track, maintain, and improve their personal connections. Users can monitor interactions, view timelines, and analyze communication patterns with friends.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*  React (Vite)
+*  Tailwind CSS
+*  Recharts (for data visualization)
+*  React Router DOM
+*  React Icons
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+
+### 1. Friend Management
+
+* View all friends in a clean card layout
+* Track contact status (On Track, Almost Due, Overdue)
+* Detailed friend profile with bio, tags, and actions
+
+### 2. Interaction Timeline
+
+* Log interactions (Call, Text, Video)
+* Filter timeline using dropdown (All / Call / Text / Video)
+* Visual timeline UI with icons and dates
+
+### 3.  Friendship Analytics
+
+* Dynamic Pie Chart based on interactions
+* Real-time data updates from user activity
+* Shows communication distribution (Call/Text/Video)
+
+---
+
+### Interaction System (Dynamic Feature)
+
+  How it works
+  From the Friend Details page, users can perform:
+* Call
+* Text
+* Video
+
+When any action is clicked:
+A new entry is instantly added to the Timeline.
+The entry includes:
+Interaction type (Call/Text/Video),
+Friend name.
+Current date
+* Real-Time Updates,
+* Timeline Page.
+Displays all interactions dynamically.
+Supports filtering by interaction type.
+* Stats Page
+Pie chart updates automatically,
+Shows real-time ratio of Call / Text / Video interactions.
+ User Feedback ->
+Toast notification appears after each interaction ,
+Confirms that the action was successfully logged.
+
+### Key Benefit
+
+This system ensures a seamless flow:
+
+User Action → Timeline Update → Analytics Update
+
+Making the app interactive, real-time, and data-driven.
+
+##  Responsive Design
+
+* Fully responsive for mobile, tablet, and desktop,
+* Optimized layouts and spacing across all devices.
+
+---
+
+##  Additional Features
+
+* Toast notifications on interaction
+* Loading state while fetching data
+* 404 Not Found page for invalid routes
+
+---
+
+##  Project Status
+
+  Completed and ready for deployment ->
+  Installation & Setup,
+  git clone https://github.com/Safa-Anan08/keen-keeper-react-web ,
+  npm install ,
+  npm run dev
+
+### Live Demo
+
+🔗 https://keen-keeper-react.netlify.app/ 
+
+
+## Future Improvements
+  1.Edit/Delete friend functionality,
+  2.Authentication system,
+  3.Dark mode
+
+### Author
+
+Developed as part of a frontend assignment project.
+
+
+
